@@ -1,14 +1,3 @@
-// for(var i = 0; i<rute.length; i++){
-//     if(arrPenumpang[1] == rute[i]){
-//         for(var j = i + 1; j<rute.length; j++){
-//             if(arrPenumpang[2] == rute[j]){
-//                 jarak = j - i;
-//                 break;
-//             }
-//         }
-//     }
-// }
-
 function naikAngkot(arrPenumpang) {
     rute = ['A', 'B', 'C', 'D', 'E', 'F'];
     var hasil = [];
