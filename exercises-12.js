@@ -13,16 +13,16 @@ function countProfit(shoppers) {
     };
 
     var baju = {
-        product: 'Baju Zoro',
+        product: listBarang[1][0],
         shoppers: [],
-        leftOver: 2,
+        leftOver: listBarang[1][2],
         totalProfit: 0
     }
 
     var sweater = {
-        product:'Sweater Uniklooh',
+        product: listBarang[2][0],
         shoppers: [],
-        leftOver: 1,
+        leftOver: listBarang[2][2],
         totalProfit: 0
     }
 
@@ -33,6 +33,20 @@ function countProfit(shoppers) {
                 sepatu.shoppers.push(shoppers[i].name);
                 sepatu.leftOver -= shoppers[i].amount;
                 sepatu.totalProfit += (shoppers[i].amount * 1500000)
+            }
+        }
+        else if(shoppers[i].product == 'Baju Zoro'){
+            if(baju.leftOver >= shoppers[i].amount){
+                baju.shoppers.push(shoppers[i].name);
+                baju.leftOver -= shoppers[i].amount;
+                baju.totalProfit += (shoppers[i].amount * 500000)
+            }
+        }
+        else if(shoppers[i].product == 'Sweater Uniklooh'){
+            if(sweater.leftOver >= shoppers[i].amount){
+                sweater.shoppers.push(shoppers[i].name);
+                sweater.leftOver -= shoppers[i].amount;
+                sweater.totalProfit += (shoppers[i].amount * 175000)
             }
         }
     }

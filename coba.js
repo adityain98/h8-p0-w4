@@ -1,16 +1,3 @@
-var i = {
-    kata: 'halo',
-    fuck: 2,
-    shit: 5
-}
+var halo = ['a', 'b', 'c']
 
-var j = {
-    stta: 9,
-    lwiay: 7
-}
-
-if(i.kata == 'halo'){
-    j.stta += i.fuck;
-}
-
-console.log(j.stta)
+var  

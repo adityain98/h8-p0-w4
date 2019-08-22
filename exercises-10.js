@@ -1,5 +1,8 @@
 function changeMe(arr) {
     var j = 0;
+    if(isNaN(arr[0]) == true){
+        console.log("");
+    }
     for(var i = 0; i<arr.length; i++){
             var orang = {
                 firstName: arr[i][j],

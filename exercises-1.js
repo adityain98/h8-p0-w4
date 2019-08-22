@@ -7,7 +7,7 @@ function angkaPrima(angka) {
         }
     }
     return prima;
-  }
+}
   
   // TEST CASES
   console.log(angkaPrima(3)); // true

@@ -1,25 +1,44 @@
 function cariModus(arr) {
-    var jumlah = 0;
+    var sementara = [];
+    var jumlah = [];
+    var hasilSementara = 0;
     var hasil = 0;
-    for(var i = 0; i < arr.length; i++){
-        var sementara = 0;
-        for(var j = i+1; j < arr.length; j++){
-            if(arr[i] == arr[j]){
-                sementara = sementara + 1;
+    
+    for(var i = 0; i<arr.length; i++){
+        if(i == 0){
+            sementara.push(arr[i]);
+            jumlah.push(1);
+        }
+        else{
+            var isDuplicate = false;
+            for(var j = 0; j<sementara.length; j++){
+                if(arr[i] == sementara[j]){
+                    jumlah[j] += 1;
+                    isDuplicate = true;
+                }
+            }
+            if(isDuplicate == false){
+                sementara.push(arr[i]);
+                jumlah.push(1);
             }
         }
-        if(sementara > hasil){
-            jumlah = jumlah + sementara;
-            hasil = arr[i];
+    }
+    for(var i = 0; i<jumlah.length; i++){
+        if(jumlah[i] > hasilSementara){
+            hasilSementara = jumlah[i];
+            hasil = sementara[i];
         }
     }
-    if(jumlah == 1){
+    if(hasilSementara == 1){
+        return -1;
+    }
+    else if(sementara.length == 1){
         return -1;
     }
     else{
         return hasil;
     }
-  }
+}
   
   // TEST CASES
   console.log(cariModus([10, 4, 5, 2, 4])); // 4
