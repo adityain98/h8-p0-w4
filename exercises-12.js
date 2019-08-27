@@ -129,37 +129,26 @@ function countProfit(shoppers) {
     var result = [];
 
     for (var a in data) {
-        var hasil = {};
+        var hasil = { 
+            product: data[a].produk,
+            shoppers: [],
+            leftOver: data[a].jumlah,
+            totalProfit: 0
+        }
         var nama = [];
-        jumlah = 0;
+        var jumlah = 0;
         for(var i = 0; i < shoppers.length; i++){
             if(data[a].produk == shoppers[i].product){
                 if(data[a].jumlah - shoppers[i].amount >= 0){
-                    data[a].jumlah -= shoppers[i].amount;
-                    hasil.product = data[a].produk;
+                    data[a].jumlah -= shoppers[i].amount;;
                     nama.push(shoppers[i].name);
-                    hasil.nama = nama;
+                    hasil.shoppers = nama;
                     jumlah += shoppers[i].amount;
                     hasil.leftOver = data[a].jumlah;
                     hasil.totalProvit = jumlah * data[a].harga;
                 }
-                else{
-                    var isDuplicate = false;
-                    for(var b in hasil){
-                        if(hasil[b].product == data[a].produk){
-                            isDuplicate = true;
-                        }
-                    }
-                    if(isDuplicate == false){
-                        hasil.product = data[a].produk;
-                        hasil.nama = nama;
-                        hasil.leftOver = data[a].jumlah;
-                        hasil.totalProvit = 0;
-                    }
-                }
             }
             else if(i == shoppers.length - 1 && nama.length == 0){
-                hasil.product = data[a].produk;
                 hasil.nama = nama;
                 hasil.leftOver = data[a].jumlah;
                 hasil.totalProvit = 0;
