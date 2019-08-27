@@ -1,3 +1,6 @@
-var halo = ['a', 'b', 'c']
+var halo = {
+    satu: {nama: 'indra'},
+    dua: {nama: 'hasil'}
+}
 
-var  
+console.log(halo.length);
